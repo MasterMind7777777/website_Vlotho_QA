@@ -1,0 +1,9 @@
+{% extends 'auth_page/base.html' %}
+
+{% block content %}
+    <h1>Please regester or sign up</h1>
+
+    <a href="{% url 'registration_view'%}">regester</a>
+    <br>
+    <a href="{% url 'login'%}">log IN</a>
+{% endblock %}
