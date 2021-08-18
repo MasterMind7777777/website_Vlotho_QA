@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     #myApps
     'blog',
     'auth_page',
+    'profile_page',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +135,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-LOGIN_REDIRECT_URL = 'auth_view'
+LOGIN_REDIRECT_URL = 'profile_view'
 
 CRISPY_TEMPLATE_PACK="bootstrap4"
