@@ -1,10 +1,13 @@
 {% extends 'auth_page/base.html' %}
 
+{% block title %}Create an Account{% endblock %}
+{% load crispy_forms_tags %}
+
 {% block content %}
-    <h1>Regestration</h1>
-    <a href="{% url 'auth_view'%}">home</a>
-    <form method="POST" class="auth-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
+    <form method="POST" class="form-group">
+	{% csrf_token %}
+	{{ form|crispy }}
+    <br>
+	<button type="submit" class="btn btn-success">Register</button>
     </form>
 {% endblock %}

@@ -1,3 +1,9 @@
+{% extends 'auth_page/base.html' %}
+
+{% block title %}Log in{% endblock %}
+
+{% load crispy_forms_tags %}
+
 {% block content %}
 
   {% if form.errors %}
@@ -13,25 +19,22 @@
     {% endif %}
   {% endif %}
 
-  <a href="{% url 'auth_view'%}">home</a>
-
-  <form method="post" action="{% url 'login' %}">
+  <form method="post" action="{% url 'login' %}" class="form-group">
     {% csrf_token %}
     <table>
       <tr>
-        <td>{{ form.username.label_tag }}</td>
-        <td>{{ form.username }}</td>
-      </tr>
-      <tr>
-        <td>{{ form.password.label_tag }}</td>
-        <td>{{ form.password }}</td>
+        {{form|crispy}}
       </tr>
     </table>
-    <input type="submit" value="login" />
+    <br>
+    <input type="submit" value="login" class="btn btn-success"/>
     <input type="hidden" name="next" value="{{ next }}" />
   </form>
 
   {# Assumes you setup the password_reset view in your URLconf #}
-  <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+  <p>
+    <br>
+    <a href="{% url 'password_reset' %}">Lost password?</a>
+  </p>
 
 {% endblock %}

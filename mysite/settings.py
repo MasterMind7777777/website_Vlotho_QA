@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'crispy_forms',
+
+
     #myApps
     'blog',
     'auth_page',
@@ -132,3 +135,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 LOGIN_REDIRECT_URL = 'auth_view'
+
+CRISPY_TEMPLATE_PACK="bootstrap4"
