@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import registrationForm
 from django.utils import timezone
 
-def main_view(request):
+def auth_view(request):
     return render(request, 'auth_page/auth_main.html')
 
 def registration_view(request):

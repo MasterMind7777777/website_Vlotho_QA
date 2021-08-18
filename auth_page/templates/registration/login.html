@@ -13,7 +13,7 @@
     {% endif %}
   {% endif %}
 
-  <a href="{% url 'main_view'%}">home</a>
+  <a href="{% url 'auth_view'%}">home</a>
 
   <form method="post" action="{% url 'login' %}">
     {% csrf_token %}

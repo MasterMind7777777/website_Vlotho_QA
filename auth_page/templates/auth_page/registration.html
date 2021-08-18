@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>Regestration</h1>
-    <a href="{% url 'main_view'%}">home</a>
+    <a href="{% url 'auth_view'%}">home</a>
     <form method="POST" class="auth-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
