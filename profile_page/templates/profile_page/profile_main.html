@@ -1,5 +1,13 @@
 {% extends 'profile_page/base.html' %}
 
 {% block content %}
+
     <h1>Profile</h1>
+    <br>
+    <ul>
+        <li><strong>username:</strong>   {{ user.username }}</li>
+        <li><strong>email:</strong>      {{ user.email }}</li>
+        <li><strong>first name:</strong> {{ user.first_name }}</li>
+        <li><strong>last name:</strong>  {{ user.last_name }}</li>
+    </ul>
 {% endblock %}
