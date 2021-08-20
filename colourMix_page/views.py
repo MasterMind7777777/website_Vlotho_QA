@@ -1,9 +1,10 @@
 from django.shortcuts import render , redirect
 from .forms import ColourForm
 from .hexToCmyk import Convert
+from django.contrib.auth.decorators import login_required
 
 #Create your views here.
-
+@login_required
 def colourMixMain_view(request):
     if request.method == "POST":
         form = ColourForm(request.POST)
@@ -22,6 +23,11 @@ def colourMixMain_view(request):
             m = m * coef
             y = y * coef
             k = k * coef
+
+            c = round(c, 2)
+            m = round(m, 2)
+            y = round(y, 2)
+            k = round(k, 2)
             water = vol - c - m - y - k
 
 
