@@ -14,8 +14,11 @@
     </head>
     <body>
         <div class="sidenav">
-            <a href="{% url 'profile_view'%}">Home</a>
+            {% block navBar %}
+            {% endblock %}
         </div>
+
+
 
         <div id="content" name="content" class="main">
             <div class="row justify-content-center">
