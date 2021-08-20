@@ -21,4 +21,5 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('authentication/', include('auth_page.urls')),
     path('profile/', include('profile_page.urls')),
+    path('colourMix/', include('colourMix_page.urls')),
 ]
