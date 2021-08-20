@@ -1,9 +1,58 @@
 {% extends 'colourMix_page/base_colourMix.html' %}
-
+{% load static %}
+{% load crispy_forms_tags %}
 {% block title %} Colour Mix {% endblock %}
 
 {% block content %}
+    <script src="{% static 'js/jscolor.js' %}"></script>
+    <script>
+        // These options apply to all color pickers on the page
+        jscolor.presets.default = {
+            previewSize:376, width:1500, height:1500
+        };
+    </script>
 
     <h1>Colour Mix</h1>
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{form|crispy}}
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-success">Save</button>
+
+        <br>
+        <br>
+        <ul class="list-group">
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+              Cyan {{c}}
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+              Magenta {{m}}
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+              Yellow {{y}}
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+              Black {{k}}
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+              Water {{water}}
+            </li>
+          </ul>
+        
+
+    </form>
+
 
 {% endblock %}
