@@ -1,10 +1,11 @@
-from django.shortcuts import render , redirect
+from django.shortcuts import render
 from .forms import ColourForm
 from .hexToCmyk import Convert
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 #Create your views here.
 @login_required
+@user_passes_test(lambda u: u.groups.filter(name='Premium').count() > 0)
 def colourMixMain_view(request):
     if request.method == "POST":
         form = ColourForm(request.POST)

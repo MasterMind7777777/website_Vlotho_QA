@@ -142,6 +142,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 LOGIN_REDIRECT_URL = 'profile_view'
+LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/authentication/login/'
 
 CRISPY_TEMPLATE_PACK="bootstrap4"
