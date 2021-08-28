@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'auth_page',
     'profile_page',
     'colourMix_page',
+    'questions_page',
 ]
 
 MIDDLEWARE = [
