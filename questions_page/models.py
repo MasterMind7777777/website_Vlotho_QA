@@ -19,7 +19,8 @@ def upload_gallery_image(instance, filename):
 
 
 class Image(models.Model):
-    image = models.ImageField(upload_to=upload_gallery_image)
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name="images")
+    image= models.FileField(upload_to ='images/') 
 
 
+        
