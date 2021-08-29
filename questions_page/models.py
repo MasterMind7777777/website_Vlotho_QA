@@ -1,29 +1,25 @@
-from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your models here.
-class MultiImage(models.Model):
-    def default(self):
-        return self.images.filter(default=True).first()
-    def thumbnails(self):
-        return self.images.filter(width__lt=100, length_lt=100)
 
-
-class Image(models.Model):
-    name = models.CharField(max_length=255)
-    model = models.ForeignKey(MultiImage, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='images/')
-    default = models.BooleanField(default=False)
-    width = models.FloatField(default=100)
-    length = models.FloatField(default=100)
-
-
-class Question(MultiImage):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+class Question(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField()
     published_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.title
+
+
+def upload_gallery_image(instance, filename):
+    return f"images/{instance.question.name}/gallery/{filename}"
+
+
+class Image(models.Model):
+    image = models.ImageField(upload_to=upload_gallery_image)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name="images")
+
+

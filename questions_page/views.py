@@ -15,35 +15,28 @@ def questionMain_view(request):
 def postQ_view(request):
  
     ImageFormSet = modelformset_factory(Image,
-                                        form=ImageForm, extra=3)
+                                        form=ImageForm)
     #'extra' means the number of photos that you can upload   ^
     if request.method == 'POST':
     
-        questionForm = QuestionForm(request.POST)
-        formset = ImageFormSet(request.POST, request.FILES,
-                               queryset=Image.objects.none())
-    
-    
+        questionForm = QuestionForm(request.POST, request.user)
+        formset = ImageFormSet(request.POST, request.FILES)
+
         if questionForm.is_valid() and formset.is_valid():
-            question_form = questionForm.save(commit=False)
-            question_form.user = request.user
-            question_form.save()
-    
+            question_obj = questionForm.save(commit=False)
+            question_obj.user = request.user
+            question_obj.save()
+
             for form in formset.cleaned_data:
-                #this helps to not crash if the user   
-                #do not upload all the photos
                 if form:
                     image = form['image']
-                    photo = Image(post=question_form, image=image)
-                    photo.save()
-            # use django messages framework
-            messages.success(request,
-                             "Yeeew, check it out on the home page!")
-            return HttpResponseRedirect("/")
+                    Image.objects.create(image=image, question=question_obj)
+            return HttpResponseRedirect('/')
         else:
             print(questionForm.errors, formset.errors)
     else:
         questionForm = QuestionForm()
         formset = ImageFormSet(queryset=Image.objects.none())
+        return render(request, 'questions_page/postQ.html', {"questionForm":questionForm, "formset":formset})
     return render(request, 'questions_page/postQ.html',
                   {'questionForm': questionForm, 'formset': formset})
