@@ -1,14 +1,15 @@
 from django.shortcuts import render, redirect
-from django.forms import modelformset_factory
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import ImageForm, QuestionForm
 from .models import Image
 
 # Create your views here.
-
+@user_passes_test(lambda u: u.groups.filter(name='Premium').count() > 0)
+@login_required
 def questionMain_view(request):
     return render(request, 'questions_page/questions_main.html')
 
+@user_passes_test(lambda u: u.groups.filter(name='Premium').count() > 0)
 @login_required
 def postQ_view(request):
     if request.method == 'POST':
