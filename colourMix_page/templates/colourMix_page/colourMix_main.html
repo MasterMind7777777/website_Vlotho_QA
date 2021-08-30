@@ -3,6 +3,7 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 
+
 {% block title %}{% translate 'Colour Mix' %}{% endblock %}
 
 {% block content %}
@@ -15,8 +16,6 @@
     </script>
 
     <h1>{% translate 'Colour Mix' %}</h1>
-
-    <p><li>The current language is <b>{{ LANGUAGE_CODE }}</b></li></p>
 
     <form method="POST" class="form-group">
         {% csrf_token %}

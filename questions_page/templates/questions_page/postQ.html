@@ -1,10 +1,11 @@
 {% extends 'questions_page/base_questions.html' %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 
-{% block title %} Ask Question {% endblock %}
+{% block title %} {% translate 'Ask Question' %}{% endblock %}
 
 {% block content %}
-    <h1>Ask Question</h1>
+    <h1>{% translate 'Ask Question' %}</h1>
     <br>
     <form method="POST" class="form-group" enctype="multipart/form-data">
  
@@ -17,6 +18,6 @@
         
         
         <br>
-        <button type="submit" class="btn btn-success">Save</button>
+        <button type="submit" class="btn btn-success">{% translate 'Save' %}</button>
     </form>
 {% endblock %}

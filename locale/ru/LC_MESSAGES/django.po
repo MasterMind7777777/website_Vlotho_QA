@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 16:02+0300\n"
+"POT-Creation-Date: 2021-08-30 18:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,46 +20,131 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\colourMix_page\templates\colourMix_page\base_colourMix.html:5
+#: .\auth_page\templates\auth_page\auth_main.html:4
+#: .\auth_page\templates\auth_page\base_auth.html:5
+#: .\home_page\templates\home_page\base_home.html:5
+msgid "Authentication"
+msgstr "Регистрация/Вход"
+
+#: .\auth_page\templates\auth_page\auth_main.html:7
+msgid "Please regester or sign up"
+msgstr "Зарегестрируйтесь или войдите"
+
+#: .\auth_page\templates\auth_page\auth_main.html:8
+msgid "Log out"
+msgstr "Выйти из аккаунта"
+
+#: .\auth_page\templates\auth_page\base_auth.html:6
+msgid "Sign up"
+msgstr "Зарегестрироватся"
+
+#: .\auth_page\templates\auth_page\base_auth.html:7
+#: .\auth_page\templates\registration\login.html:4
+msgid "Log in"
+msgstr "Войти"
+
+#: .\auth_page\templates\auth_page\registration.html:4
+msgid "Create an Account"
+msgstr "Создать аккаунт"
+
+#: .\auth_page\templates\auth_page\registration.html:12
+msgid "Register"
+msgstr "Зарегистрироватся"
+
+#: .\auth_page\templates\registration\login.html:11
+msgid "Your username and password didn't match. Please try again."
+msgstr "Имя Пользователя и пароль не совпадают. Попробуте снова."
+
+#: .\auth_page\templates\registration\login.html:19
+msgid "Please login to see this page."
+msgstr "Войдите тобы просматривать эту страницу"
+
+#: .\auth_page\templates\registration\login.html:38
+msgid "Lost password?"
+msgstr "Востановить пароль?"
+
+#: .\colourMix_page\forms.py:7
+msgid "Volume in milliliters"
+msgstr "Объём в милилитрах"
+
+#: .\colourMix_page\forms.py:8 .\colourMix_page\forms.py:12
+#, fuzzy
+#| msgid "Mix colours"
+msgid "colour"
+msgstr "Цвет"
+
+#: .\colourMix_page\forms.py:12
+msgid "volume"
+msgstr "Объём"
+
+#: .\colourMix_page\templates\colourMix_page\base_colourMix.html:6
+#: .\home_page\templates\home_page\base_home.html:6
 msgid "Mix colours"
 msgstr "Колеровка"
 
-#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:6
-#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:17
+#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:7
+#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:18
 msgid "Colour Mix"
 msgstr "Колеровка"
 
-#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:32
+#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:31
+#: .\questions_page\templates\questions_page\postQ.html:21
 msgid "Save"
 msgstr "Сохранить"
 
-#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:39
-msgid "Cyan"
+#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:38
+msgid "Blue"
 msgstr "Синий"
 
-#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:43
-msgid "Magenta"
+#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:42
+msgid "Pink"
 msgstr "Малиновый"
 
-#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:47
+#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:46
 msgid "Yellow"
 msgstr "Жёлтый"
 
-#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:51
+#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:50
 msgid "Black"
 msgstr "Чёрный"
 
-#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:55
+#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:54
 msgid "Water"
 msgstr "Вода"
 
+#: .\home_page\templates\home_page\base_home.html:7
+#: .\profile_page\templates\profile_page\base_profile.html:5
+msgid "Profile"
+msgstr "Профиль"
+
+#: .\home_page\templates\home_page\base_home.html:8
+#: .\questions_page\templates\questions_page\base_questions.html:5
+msgid "Questions"
+msgstr "Вопросы"
+
+#: .\home_page\templates\home_page\main_home.html:4
+msgid "Vlotho Home"
+msgstr "Vlotho Домашняя"
+
+#: .\home_page\templates\home_page\main_home.html:7
+msgid "Home Page"
+msgstr "Домашняя страница"
+
+#: .\mysite\settings.py:126
+msgid "English"
+msgstr "Англиский"
+
+#: .\mysite\settings.py:127
+msgid "Russian"
+msgstr "Русский"
+
 #: .\myvenv\Lib\site-packages\colorfield\fields.py:17
 msgid "Enter a valid hex color, eg. #000000"
-msgstr ""
+msgstr "Введите цвет в формате hex типа(#000000)"
 
 #: .\myvenv\Lib\site-packages\colorfield\fields.py:21
 msgid "Enter a valid hexa color, eg. #00000000"
-msgstr ""
+msgstr "Введите цвет в формате hex типа(#000000)"
 
 #: .\myvenv\Lib\site-packages\crispy_forms\tests\test_form_helper.py:129
 #: .\myvenv\Lib\site-packages\crispy_forms\tests\test_form_helper.py:139
@@ -1263,3 +1348,81 @@ msgstr ""
 #: .\myvenv\Lib\site-packages\django\views\templates\default_urlconf.html:249
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#: .\profile_page\templates\profile_page\password_change.html:6
+#: .\profile_page\templates\profile_page\password_change.html:9
+msgid "Password change"
+msgstr "Смена пароля"
+
+#: .\profile_page\templates\profile_page\password_change.html:17
+msgid "Old Password is not correct, or new passwords do not match."
+msgstr "Неверно введён старый пароль, или новые пароли не совпадают"
+
+#: .\profile_page\templates\profile_page\profile_main.html:10
+msgid "username"
+msgstr "Имя Пользователя"
+
+#: .\profile_page\templates\profile_page\profile_main.html:11
+msgid "email"
+msgstr ""
+
+#: .\profile_page\templates\profile_page\profile_main.html:12
+msgid "first name"
+msgstr "Имя"
+
+#: .\profile_page\templates\profile_page\profile_main.html:13
+msgid "last name"
+msgstr "Фамилия"
+
+#: .\profile_page\templates\profile_page\profile_main.html:19
+msgid "password change"
+msgstr "смена пароля"
+
+#: .\questions_page\forms.py:9
+msgid "title"
+msgstr "Название"
+
+#: .\questions_page\forms.py:9
+msgid "text"
+msgstr "Содержание"
+
+#: .\questions_page\forms.py:18
+msgid "images"
+msgstr "Фотографии"
+
+#: .\questions_page\templates\questions_page\postQ.html:5
+#: .\questions_page\templates\questions_page\postQ.html:8
+msgid "Ask Question"
+msgstr "Задать вопрос"
+
+#: .\questions_page\templates\questions_page\question_detail.html:4
+#: .\questions_page\templates\questions_page\question_detail.html:7
+msgid "Questions detail"
+msgstr "Посмотреть вопрос"
+
+#: .\questions_page\templates\questions_page\questions_list.html:4
+#: .\questions_page\templates\questions_page\questions_main.html:4
+msgid "Questions Main"
+msgstr "Вопросы главная"
+
+#: .\questions_page\templates\questions_page\questions_list.html:7
+msgid "Questions display"
+msgstr "Отобразить вопросы"
+
+#: .\questions_page\templates\questions_page\questions_main.html:7
+msgid "Questions Main Page"
+msgstr "Вопросы главная страница"
+
+#: .\questions_page\templates\questions_page\questions_main.html:8
+msgid "Ask question"
+msgstr "Задать вопрос"
+
+#: .\templates\base.html:19
+msgid "Home"
+msgstr "Домашняя"
+
+#~ msgid "Cyan"
+#~ msgstr "Синий"
+
+#~ msgid "Magenta"
+#~ msgstr "Малиновый"

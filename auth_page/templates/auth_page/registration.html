@@ -1,6 +1,7 @@
 {% extends 'auth_page/base_auth.html' %}
+{% load i18n %}
 
-{% block title %}Create an Account{% endblock %}
+{% block title %}{% translate 'Create an Account' %}{% endblock %}
 {% load crispy_forms_tags %}
 
 {% block content %}
@@ -8,6 +9,6 @@
 	    {% csrf_token %}
 	    {{ form|crispy }}
         <br>
-	    <button type="submit" class="btn btn-success">Register</button>
+	    <button type="submit" class="btn btn-success">{% translate 'Register' %}</button>
     </form>
 {% endblock %}

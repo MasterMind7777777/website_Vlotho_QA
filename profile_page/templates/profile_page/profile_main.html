@@ -1,4 +1,5 @@
 {% extends 'profile_page/base_profile.html' %}
+{% load i18n %}
 
 {% block title %} Profile {% endblock %}
 {% block content %}
@@ -6,15 +7,15 @@
     <h1>Profile</h1>
     <br>
     <ul class="list-group">
-        <li class="list-group-item"><strong>username:</strong>   {{ user.username }}</li>
-        <li class="list-group-item"><strong>email:</strong>      {{ user.email }}</li>
-        <li class="list-group-item"><strong>first name:</strong> {{ user.first_name }}</li>
-        <li class="list-group-item"><strong>last name:</strong>  {{ user.last_name }}</li>
+        <li class="list-group-item"><strong>{% translate 'username' %}:</strong>   {{ user.username }}</li>
+        <li class="list-group-item"><strong>{% translate 'email' %}:</strong>      {{ user.email }}</li>
+        <li class="list-group-item"><strong>{% translate 'first name' %}:</strong> {{ user.first_name }}</li>
+        <li class="list-group-item"><strong>{% translate 'last name' %}:</strong>  {{ user.last_name }}</li>
     </ul>
 
     <br>
     <br>
 
-    <a href="{% url 'password_change_view'%}">password change</a>
+    <a href="{% url 'password_change_view'%}">{% translate 'password change' %}</a>
 
 {% endblock %}

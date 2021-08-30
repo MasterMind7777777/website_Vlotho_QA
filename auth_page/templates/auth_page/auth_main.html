@@ -1,8 +1,9 @@
 {% extends 'auth_page/base_auth.html' %}
+{% load i18n %}
 
-{% block title %} Authecation {% endblock %}
+{% block title %} {% translate 'Authentication' %} {% endblock %}
 
 {% block content %}
-    <h1>Please regester or sign up</h1>
-    <a href="{% url 'logout'%}">Log out</a>
+    <h1>{% translate 'Please regester or sign up' %}</h1>
+    <a href="{% url 'logout'%}">{% translate 'Log out' %}</a>
 {% endblock %}

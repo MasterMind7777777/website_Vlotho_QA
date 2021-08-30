@@ -1,9 +1,10 @@
 {% extends 'questions_page/base_questions.html' %}
+{% load i18n %}
 
-{% block title %} Questions Main {% endblock %}
+{% block title %} {% translate 'Questions Main' %} {% endblock %}
 
 {% block content %}
-    <h1>Questions display</h1>
+    <h1>{% translate 'Questions display' %}</h1>
     <br>
 
     {% for question in questions %}

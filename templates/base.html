@@ -1,5 +1,7 @@
 <!doctype html>
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <html lang="en">
     <head>
         <title>
@@ -14,7 +16,7 @@
     </head>
     <body>
         <div class="sidenav">
-            <a href="{% url 'mainHome_view'%}">Home</a>
+            <a href="{% url 'mainHome_view'%}">{% translate 'Home' %}</a>
             {% block sideBar %}
             {% endblock %}
         </div>

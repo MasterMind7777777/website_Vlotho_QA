@@ -12,11 +12,7 @@ class Question(models.Model):
 
     def __str__(self):
         return self.title
-
-
-def upload_gallery_image(instance, filename):
-    return f"images/{instance.question.name}/gallery/{filename}"
-
+        
 
 class Image(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name="images")

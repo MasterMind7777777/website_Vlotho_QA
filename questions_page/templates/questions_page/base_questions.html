@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block sideBar %}
-    <a href="{% url 'questionMain_view'%}">Questions</a>
+    <a href="{% url 'questionMain_view'%}">{% translate 'Questions' %}</a>
 {% endblock %}

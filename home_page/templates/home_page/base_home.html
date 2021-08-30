@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block sideBar %}
-    <a href="{% url 'auth_view'%}">Authentication</a>
-    <a href="{% url 'colourMixMain_view'%}">Mix colours</a>
-    <a href="{% url 'profile_view'%}">Profile</a>
-    <a href="{% url 'questionMain_view'%}">Questions</a>
+    <a href="{% url 'auth_view'%}">{% translate 'Authentication' %}</a>
+    <a href="{% url 'colourMixMain_view'%}">{% translate 'Mix colours' %}</a>
+    <a href="{% url 'profile_view'%}">{% translate 'Profile' %}</a>
+    <a href="{% url 'questionMain_view'%}">{% translate 'Questions' %}</a>
 {% endblock %}
