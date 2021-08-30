@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'colorfield',
 
 
-    #myApps
+    # myApps
     'home_page',
     'blog',
     'auth_page',
@@ -149,3 +149,5 @@ LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/authentication/login/'
 
 CRISPY_TEMPLATE_PACK="bootstrap4"
+
+LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)

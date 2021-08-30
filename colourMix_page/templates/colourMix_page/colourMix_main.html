@@ -1,7 +1,9 @@
 {% extends 'colourMix_page/base_colourMix.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
-{% block title %} Colour Mix {% endblock %}
+{% load i18n %}
+
+{% block title %}{% translate 'Colour Mix' %}{% endblock %}
 
 {% block content %}
     <script src="{% static 'js/jscolor.js' %}"></script>
@@ -12,7 +14,10 @@
         };
     </script>
 
-    <h1>Colour Mix</h1>
+    <h1>{% translate 'Colour Mix' %}</h1>
+
+    <p><li>The current language is <b>{{ LANGUAGE_CODE }}</b></li></p>
+
     <form method="POST" class="form-group">
         {% csrf_token %}
         {{form|crispy}}
@@ -24,30 +29,30 @@
         <br>
         <br>
         <br>
-        <button type="submit" class="btn btn-success">Save</button>
+        <button type="submit" class="btn btn-success">{% trans 'Save'%}</button>
 
         <br>
         <br>
         <ul class="list-group">
             <li class="list-group-item">
               <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-              Cyan {{c}}
+              {% translate 'Blue' %} {{c}}
             </li>
             <li class="list-group-item">
               <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-              Magenta {{m}}
+              {% translate 'Pink' %} {{m}}
             </li>
             <li class="list-group-item">
               <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-              Yellow {{y}}
+              {% translate 'Yellow' %} {{y}}
             </li>
             <li class="list-group-item">
               <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-              Black {{k}}
+              {% translate 'Black' %} {{k}}
             </li>
             <li class="list-group-item">
               <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-              Water {{water}}
+              {% translate 'Water' %} {{water}}
             </li>
           </ul>
         
