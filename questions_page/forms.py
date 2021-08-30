@@ -3,10 +3,15 @@ from .models import Question, Image
 from django.utils.translation import gettext_lazy as _
 
 class QuestionForm(forms.ModelForm):
+
     class Meta:
         model = Question
         exclude = ['user']
-        fields = (_('title'), _('text'),)
+        fields = ('title', 'text',)
+        labels = {
+           'title' : _('title'),
+           'text' : _('text'),
+        }
  
  
 # class ImageForm(forms.ModelForm):

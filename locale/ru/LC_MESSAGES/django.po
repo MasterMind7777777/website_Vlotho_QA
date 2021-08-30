@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:20+0300\n"
+"POT-Creation-Date: 2021-08-30 18:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,19 +63,15 @@ msgstr "Войдите тобы просматривать эту страниц
 msgid "Lost password?"
 msgstr "Востановить пароль?"
 
-#: .\colourMix_page\forms.py:7
+#: .\colourMix_page\forms.py:11
 msgid "Volume in milliliters"
 msgstr "Объём в милилитрах"
 
-#: .\colourMix_page\forms.py:8 .\colourMix_page\forms.py:12
+#: .\colourMix_page\forms.py:12
 #, fuzzy
 #| msgid "Mix colours"
 msgid "colour"
 msgstr "Цвет"
-
-#: .\colourMix_page\forms.py:12
-msgid "volume"
-msgstr "Объём"
 
 #: .\colourMix_page\templates\colourMix_page\base_colourMix.html:6
 #: .\home_page\templates\home_page\base_home.html:6
@@ -1378,15 +1374,15 @@ msgstr "Фамилия"
 msgid "password change"
 msgstr "смена пароля"
 
-#: .\questions_page\forms.py:9
+#: .\questions_page\forms.py:12
 msgid "title"
 msgstr "Название"
 
-#: .\questions_page\forms.py:9
+#: .\questions_page\forms.py:13
 msgid "text"
 msgstr "Содержание"
 
-#: .\questions_page\forms.py:18
+#: .\questions_page\forms.py:23
 msgid "images"
 msgstr "Фотографии"
 
@@ -1420,6 +1416,9 @@ msgstr "Задать вопрос"
 #: .\templates\base.html:19
 msgid "Home"
 msgstr "Домашняя"
+
+#~ msgid "volume"
+#~ msgstr "Объём"
 
 #~ msgid "Cyan"
 #~ msgstr "Синий"
