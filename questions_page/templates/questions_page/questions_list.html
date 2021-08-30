@@ -1,0 +1,18 @@
+{% extends 'questions_page/base_questions.html' %}
+
+{% block title %} Questions Main {% endblock %}
+
+{% block content %}
+    <h1>Questions display</h1>
+    <br>
+
+    {% for question in questions %}
+    <div>
+        <div class="date">
+            {{ question.published_date }}
+        </div>
+        <h1><a href="{% url 'question_detail_view' pk=question.pk %}">{{ question.title }}</a></h1>
+        <p>{{ question.text|linebreaksbr }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}

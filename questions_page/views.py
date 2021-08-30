@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.utils import timezone
 from .forms import ImageForm, QuestionForm
-from .models import Image
+from .models import Image, Question
 
 # Create your views here.
 @user_passes_test(lambda u: u.groups.filter(name='Premium').count() > 0)
@@ -28,3 +29,13 @@ def postQ_view(request):
     questionForm = QuestionForm()
     img_form = ImageForm(request.POST, request.FILES)
     return render(request, 'questions_page/postQ.html', {"questionForm":questionForm, "img_form": img_form})
+
+def displayQ_view(request):
+
+    questions = Question.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    return render(request, 'questions_page/questions_list.html', {'questions' : questions})
+
+def question_detail_view(request, pk):
+
+    question = get_object_or_404(Question, pk=pk)
+    return render(request, 'questions_page/question_detail.html', {'question': question})

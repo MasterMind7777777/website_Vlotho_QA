@@ -1,0 +1,21 @@
+{% extends 'questions_page/base_questions.html' %}
+
+{% block title %} Questions detail {% endblock %}
+
+{% block content %}
+    <h1>Question ditail</h1>
+    <br>
+
+    <div>
+        {% if question.published_date %}
+            <div class="date">
+                {{ question.published_date }}
+            </div>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <!-- <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a> -->
+        {% endif %}
+        <h1>{{ question.title }}</h1>
+        <p>{{ question.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}
