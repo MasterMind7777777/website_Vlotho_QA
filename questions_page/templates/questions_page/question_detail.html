@@ -14,7 +14,7 @@
             </div>
         {% endif %}
         {% if user.is_authenticated %}
-            <!-- <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a> -->
+            {% comment %}<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>{% endcomment %}
         {% endif %}
         <h1>{{ question.title }}</h1>
         <p>{{ question.text|linebreaksbr }}</p>
