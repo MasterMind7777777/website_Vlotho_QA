@@ -14,7 +14,9 @@
             </div>
         {% endif %}
         {% if user.is_authenticated %}
-            {% comment %}<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>{% endcomment %}
+            {% if can_edit %}
+                <a class="btn btn-default" href="{% url 'question_edit_view' pk=question.pk %}"><i class="bi bi-pencil-square"></i></a>
+            {% endif%}
         {% endif %}
         <h1>{{ question.title }}</h1>
         <p>{{ question.text|linebreaksbr }}</p>

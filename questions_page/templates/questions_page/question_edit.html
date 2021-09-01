@@ -1,0 +1,16 @@
+{% extends 'questions_page/base_questions.html' %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block title %} {% translate 'Questions edit' %} {% endblock %}
+
+{% block content %}
+    <h1>{% translate 'Questions edit' %}</h1>
+    <form method="POST" class="post-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        {{ img_form|crispy }}
+        <button type="submit" class="btn btn-success">{% translate 'Save' %}</button>
+    </form>
+{% endblock %}

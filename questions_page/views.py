@@ -24,7 +24,7 @@ def postQ_view(request):
             question_obj.save()
             for img in request.FILES.getlist('images'):
                 Image.objects.create(image=img, question=question_obj)
-            return redirect('postQ_view')
+            return redirect('question_detail_view', pk=question_obj.pk)
 
     questionForm = QuestionForm()
     img_form = ImageForm(request.POST, request.FILES)
@@ -38,5 +38,28 @@ def displayQ_view(request):
 def question_detail_view(request, pk):
 
     question = get_object_or_404(Question, pk=pk)
+    can_edit = False
+    if request.user == question.user:
+        can_edit = True
+    
     images = Image.objects.filter(question=pk)
-    return render(request, 'questions_page/question_detail.html', {'question': question, 'images': images})
+    return render(request, 'questions_page/question_detail.html', {'question': question, 'images': images, 'can_edit': can_edit})
+
+def question_edit_view(request, pk):
+    question = get_object_or_404(Question, pk=pk)
+    if request.method == "POST":
+        form = QuestionForm(request.POST, instance=question)
+        img_form = ImageForm(request.POST, request.FILES)
+        print('form: ', form.is_valid(), 'imgform: ', img_form.is_valid())
+        if form.is_valid():
+            question = form.save(commit=False)
+            question.author = request.user
+            question.published_date = timezone.now()
+            question.save()
+            for img in request.FILES.getlist('images'):
+                Image.objects.create(image=img, question=question)
+            return redirect('question_detail_view', pk=question.pk)
+    else:
+        form = QuestionForm(instance=question)
+        img_form = ImageForm(request.POST, request.FILES)
+    return render(request, 'questions_page/question_edit.html', {'form': form, 'img_form': img_form})
