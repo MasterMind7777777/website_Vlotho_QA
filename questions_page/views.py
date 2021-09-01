@@ -38,4 +38,5 @@ def displayQ_view(request):
 def question_detail_view(request, pk):
 
     question = get_object_or_404(Question, pk=pk)
-    return render(request, 'questions_page/question_detail.html', {'question': question})
+    images = Image.objects.filter(question=pk)
+    return render(request, 'questions_page/question_detail.html', {'question': question, 'images': images})

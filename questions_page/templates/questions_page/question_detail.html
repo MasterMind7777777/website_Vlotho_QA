@@ -19,4 +19,12 @@
         <h1>{{ question.title }}</h1>
         <p>{{ question.text|linebreaksbr }}</p>
     </div>
+    <div>
+        {% if images != None %}
+            <h2>Pictures</h2>
+            {% for image in images %}
+                <img src="{{ image.image.url }}">
+            {% endfor%}
+        {% endif %}
+    </div>
 {% endblock %}

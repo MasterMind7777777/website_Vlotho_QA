@@ -16,7 +16,7 @@ class Question(models.Model):
 
 class Image(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name="images")
-    image= models.FileField(upload_to ='images/') 
+    image = models.FileField(upload_to ='images/') 
 
 
         
