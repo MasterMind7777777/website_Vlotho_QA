@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.utils import timezone
-from .forms import ImageForm, QuestionForm
-from .models import Image, Question
+from .forms import ImageForm, QuestionForm, AnswerForm, MediaFileForm
+from .models import Image, Question, Answer, MediaFile
 
 # Create your views here.
 @user_passes_test(lambda u: u.groups.filter(name='Premium').count() > 0)
@@ -41,9 +41,17 @@ def question_detail_view(request, pk):
     can_edit = False
     if request.user == question.user:
         can_edit = True
-    
     images = Image.objects.filter(question=pk)
-    return render(request, 'questions_page/question_detail.html', {'question': question, 'images': images, 'can_edit': can_edit})
+
+    answer = None
+    media_files = None
+    print('question.answered: ', question.answered)
+    if question.answered:
+        answer = get_object_or_404(Answer, question=question)
+        media_files = MediaFile.objects.filter(answer=answer)
+    
+    
+    return render(request, 'questions_page/question_detail.html', {'question': question, 'images': images, 'can_edit': can_edit, 'answer': answer, 'media_files': media_files})
 
 def question_edit_view(request, pk):
     question = get_object_or_404(Question, pk=pk)
@@ -63,3 +71,39 @@ def question_edit_view(request, pk):
         form = QuestionForm(instance=question)
         img_form = ImageForm(request.POST, request.FILES)
     return render(request, 'questions_page/question_edit.html', {'form': form, 'img_form': img_form})
+
+def questions_answers_view(request):
+
+    questions = Question.objects.filter(published_date__lte=timezone.now(), answered__exact=False).order_by('published_date')
+    return render(request, 'questions_page/questions_answer.html', {'questions' : questions})
+
+def question_answer_view(request, pk):
+
+    question = get_object_or_404(Question, pk=pk)
+    can_edit = False
+    if request.user == question.user:
+        can_edit = True
+    
+    images = Image.objects.filter(question=pk)
+
+    if request.method == 'POST':
+        answer_form = AnswerForm(request.POST, request.user)
+        media_form = MediaFileForm(request.POST, request.FILES)
+
+        if answer_form.is_valid() and media_form.is_valid():
+            answer_obj = answer_form.save(commit=False)
+            answer_obj.user = request.user
+            answer_obj.question = question
+            answer_obj.save()
+            for media in request.FILES.getlist('media_files'):
+                MediaFile.objects.create(media_file=media, answer=answer_obj)
+            
+            question.answered = True
+            question.save()
+            return redirect('question_detail_view', pk=question.pk)
+
+
+    answer_form = AnswerForm()
+    media_form = MediaFileForm(request.POST, request.FILES)
+
+    return render(request, 'questions_page/question_answer.html', {'question': question, 'images': images, 'can_edit': can_edit, 'answer_form': answer_form, 'media_form': media_form})

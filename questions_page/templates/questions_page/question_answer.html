@@ -1,10 +1,12 @@
 {% extends 'questions_page/base_questions.html' %}
 {% load i18n %}
+{% load crispy_forms_tags %}
 
-{% block title %} {% translate 'Questions detail' %} {% endblock %}
+{% block title %} {% translate 'Question answer' %} {% endblock %}
 
 {% block content %}
-    <h1>{% translate 'Questions detail' %}</h1>
+
+    <h2>{% translate 'Questions detail' %}</h2>
     <br>
 
     <div>
@@ -30,30 +32,23 @@
         {% endif %}
     </div>
     <br>
+    <br>
     <div>
-        
+        <h2>{% translate 'Answer' %}</h2>
+        <form method="POST" class="form-group" enctype="multipart/form-data">
+ 
+            {% csrf_token %}
+    
+            {{answer_form|crispy}}
+    
+    
+            {{ media_form|crispy }}
             
-            {% if answer != None %}
-                <h2>{% translate 'Answer' %}</h2>
-    
-                {{answer.title}}
-
-                <br>
-
-                {{answer.text}}
-
-                <div>
-                    {% if media_files != None %}
-                        <h3>{% translate 'Photo, Video' %}</h3>
-                        {% for media_file in media_files %}
-                            <img src="{{ media_file.media_file.url }}">
-                        {% endfor%}
-                    {% endif %}
-                </div>
-    
-            {% endif %}
-
+            
             <br>
+            <button type="submit" class="btn btn-success">{% translate 'Save' %}</button>
+        </form>
     </div>
+
 
 {% endblock %}
