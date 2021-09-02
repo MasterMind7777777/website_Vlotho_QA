@@ -28,13 +28,23 @@ def colourMixMain_view(request):
             y = y * coef
             water = water * coef
             min_cmyk = min(c,m,y)
+            if c == min_cmyk:
+                k = c
+                c = 0
+            if m == min_cmyk:
+                k = m
+                m = 0
+            if y == min_cmyk:
+                k = y
+                y = 0
             c = round(c, 2)
             m = round(m, 2)
             y = round(y, 2)
+            k = round(k, 2)
             water = round(water, 2)
 
 
-            return render(request, 'colourMix_page/colourMix_main.html', {'form': form, 'c': c, 'm':m, 'y': y, 'water': water})
+            return render(request, 'colourMix_page/colourMix_main.html', {'form': form, 'c': c, 'm':m, 'y': y, 'k': k, 'water': water})
 
 
             
