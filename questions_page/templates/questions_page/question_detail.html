@@ -12,6 +12,8 @@
             <div class="date">
                 {{ question.published_date }}
             </div>
+            <br>
+            <strong>{{question.user}}</strong>
         {% endif %}
         {% if user.is_authenticated %}
             {% if can_edit %}
@@ -35,12 +37,14 @@
             
             {% if answer != None %}
                 <h2>{% translate 'Answer' %}</h2>
+                
                 <br>
-    
+                <br>
+                <strong>{{answer.user}}</strong>
+                <br>
+                <br>
                 <h5>{{answer.title}}</h5>
-
                 <br>
-
                 <p>{{answer.text}}</p>
 
                 <div>

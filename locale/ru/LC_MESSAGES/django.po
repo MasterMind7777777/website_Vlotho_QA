@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-02 15:27+0300\n"
+"POT-Creation-Date: 2021-09-02 22:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,6 +54,15 @@ msgstr "Зарегистрироватся"
 #: .\auth_page\templates\registration\login.html:11
 msgid "Your username and password didn't match. Please try again."
 msgstr "Имя Пользователя и пароль не совпадают. Попробуте снова."
+
+#: .\auth_page\templates\registration\login.html:16
+msgid ""
+" 'Your account doesn't have access to this page. To proceed,\n"
+"        please login with an account that has access.' "
+msgstr ""
+"Ваш аккаунт не имеет доступа к этой странице,\n"
+"Войдите в аккаунт с доступом к этой странице."
+
 
 #: .\auth_page\templates\registration\login.html:19
 msgid "Please login to see this page."
@@ -1396,7 +1405,7 @@ msgstr "Все вопросы"
 
 #: .\questions_page\templates\questions_page\base_questions.html:7
 #: .\questions_page\templates\questions_page\questions_answer.html:4
-#: .\questions_page\templates\questions_page\questions_answer.html:7\
+#: .\questions_page\templates\questions_page\questions_answer.html:7
 msgid "Answer questions"
 msgstr "Ответить на вопрос"
 
@@ -1418,16 +1427,16 @@ msgid "Questions detail"
 msgstr "Посмотреть вопрос"
 
 #: .\questions_page\templates\questions_page\question_answer.html:28
-#: .\questions_page\templates\questions_page\question_detail.html:26
+#: .\questions_page\templates\questions_page\question_detail.html:28
 msgid "Pictures"
 msgstr "Фотографии"
 
 #: .\questions_page\templates\questions_page\question_answer.html:37
-#: .\questions_page\templates\questions_page\question_detail.html:37
+#: .\questions_page\templates\questions_page\question_detail.html:39
 msgid "Answer"
 msgstr "Ответ"
 
-#: .\questions_page\templates\questions_page\question_detail.html:47
+#: .\questions_page\templates\questions_page\question_detail.html:52
 msgid "Photo, Video"
 msgstr "Видео и Фотографии"
 

@@ -26,7 +26,7 @@ class AnswerForm(forms.ModelForm):
 
 
 class ImageForm(forms.Form):
-    images = forms.FileField(label=_('images'), widget=forms.ClearableFileInput(attrs={'multiple': True}))
+    images = forms.FileField(required=False, label=_('images'), widget=forms.ClearableFileInput(attrs={'multiple': True}))
 
     class Meta:
         model = Image
@@ -34,7 +34,7 @@ class ImageForm(forms.Form):
 
 
 class MediaFileForm(forms.Form):
-    media_files = forms.FileField(label=_('video, photo'), widget=forms.ClearableFileInput(attrs={'multiple': True}))
+    media_files = forms.FileField(required=False, label=_('video, photo'), widget=forms.ClearableFileInput(attrs={'multiple': True}))
 
     class Meta:
         model = Image

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import ColourForm
-from .hexToCmyk import Convert
+from .hexToCmy import Convert
 from django.contrib.auth.decorators import login_required, user_passes_test
 
 #Create your views here.
@@ -13,26 +13,28 @@ def colourMixMain_view(request):
             hex = form['colour'].value()
             vol = form['volume'].value()
             vol = int(vol)
-            cmyk = Convert.rgb_to_cmyk(Convert.hex_to_rgb(hex)) 
-            print(cmyk)
-            c = cmyk[0]
-            m = cmyk[1]
-            y = cmyk[2]
-            k = cmyk[3]
-            coef = (vol / 400)
+            cmy = Convert.rgb_to_cmy(Convert.hex_to_rgb(hex)) 
+            print(cmy)
+            c = cmy[0]
+            m = cmy[1]
+            y = cmy[2]
+
+            cmy_arr = [c,m,y]
+            matches = [x for x in cmy_arr if x != 0]
+            water = len(matches)*100 - sum(cmy_arr)
+            coef = (vol / (len(matches)*100))    
             c = c * coef
             m = m * coef
             y = y * coef
-            k = k * coef
-
+            water = water * coef
+            min_cmyk = min(c,m,y)
             c = round(c, 2)
             m = round(m, 2)
             y = round(y, 2)
-            k = round(k, 2)
-            water = vol - c - m - y - k
+            water = round(water, 2)
 
 
-            return render(request, 'colourMix_page/colourMix_main.html', {'form': form, 'c': c, 'm':m, 'y': y, 'k': k, 'water': water})
+            return render(request, 'colourMix_page/colourMix_main.html', {'form': form, 'c': c, 'm':m, 'y': y, 'water': water})
 
 
             
