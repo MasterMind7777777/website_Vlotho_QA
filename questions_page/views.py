@@ -72,11 +72,15 @@ def question_edit_view(request, pk):
         img_form = ImageForm(request.POST, request.FILES)
     return render(request, 'questions_page/question_edit.html', {'form': form, 'img_form': img_form})
 
+@user_passes_test(lambda u: u.groups.filter(name='Master').count() > 0)
+@login_required
 def questions_answers_view(request):
 
     questions = Question.objects.filter(published_date__lte=timezone.now(), answered__exact=False).order_by('published_date')
     return render(request, 'questions_page/questions_answer.html', {'questions' : questions})
 
+@user_passes_test(lambda u: u.groups.filter(name='Master').count() > 0)
+@login_required
 def question_answer_view(request, pk):
 
     question = get_object_or_404(Question, pk=pk)

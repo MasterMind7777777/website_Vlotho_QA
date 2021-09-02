@@ -35,12 +35,13 @@
             
             {% if answer != None %}
                 <h2>{% translate 'Answer' %}</h2>
+                <br>
     
-                {{answer.title}}
+                <h5>{{answer.title}}</h5>
 
                 <br>
 
-                {{answer.text}}
+                <p>{{answer.text}}</p>
 
                 <div>
                     {% if media_files != None %}

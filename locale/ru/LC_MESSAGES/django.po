@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-31 14:06+0300\n"
+"POT-Creation-Date: 2021-09-02 15:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,6 +83,8 @@ msgstr "Колеровка"
 
 #: .\colourMix_page\templates\colourMix_page\colourMix_main.html:31
 #: .\questions_page\templates\questions_page\postQ.html:21
+#: .\questions_page\templates\questions_page\question_answer.html:49
+#: .\questions_page\templates\questions_page\question_edit.html:14
 msgid "Save"
 msgstr "Сохранить"
 
@@ -144,7 +146,7 @@ msgstr "Введите цвет в формате hex типа(#000000)"
 #: .\myvenv\Lib\site-packages\crispy_forms\tests\test_form_helper.py:139
 #: .\myvenv\Lib\site-packages\django\forms\fields.py:54
 msgid "This field is required."
-msgstr ""
+msgstr "Это поле обезательное"
 
 #: .\myvenv\Lib\site-packages\crispy_forms\tests\test_layout.py:392
 msgid "i18n text"
@@ -1372,31 +1374,67 @@ msgstr "Фамилия"
 msgid "password change"
 msgstr "смена пароля"
 
-#: .\questions_page\forms.py:12
+#: .\questions_page\forms.py:12 .\questions_page\forms.py:23
 msgid "title"
 msgstr "Название"
 
-#: .\questions_page\forms.py:13
+#: .\questions_page\forms.py:13 .\questions_page\forms.py:24
 msgid "text"
 msgstr "Содержание"
 
-#: .\questions_page\forms.py:23
+#: .\questions_page\forms.py:29
 msgid "images"
 msgstr "Фотографии"
+
+#: .\questions_page\forms.py:37
+msgid "video, photo"
+msgstr "Видео и Фотографии"
 
 #: .\questions_page\templates\questions_page\base_questions.html:6
 msgid "All questions"
 msgstr "Все вопросы"
+
+#: .\questions_page\templates\questions_page\base_questions.html:7
+#: .\questions_page\templates\questions_page\questions_answer.html:4
+#: .\questions_page\templates\questions_page\questions_answer.html:7\
+msgid "Answer questions"
+msgstr "Ответить на вопрос"
 
 #: .\questions_page\templates\questions_page\postQ.html:5
 #: .\questions_page\templates\questions_page\postQ.html:8
 msgid "Ask Question"
 msgstr "Задать вопрос"
 
+#: .\questions_page\templates\questions_page\question_answer.html:5
+#, fuzzy
+#| msgid "Questions Main"
+msgid "Question answer"
+msgstr "Ответить на вопрос"
+
+#: .\questions_page\templates\questions_page\question_answer.html:9
 #: .\questions_page\templates\questions_page\question_detail.html:4
 #: .\questions_page\templates\questions_page\question_detail.html:7
 msgid "Questions detail"
 msgstr "Посмотреть вопрос"
+
+#: .\questions_page\templates\questions_page\question_answer.html:28
+#: .\questions_page\templates\questions_page\question_detail.html:26
+msgid "Pictures"
+msgstr "Фотографии"
+
+#: .\questions_page\templates\questions_page\question_answer.html:37
+#: .\questions_page\templates\questions_page\question_detail.html:37
+msgid "Answer"
+msgstr "Ответ"
+
+#: .\questions_page\templates\questions_page\question_detail.html:47
+msgid "Photo, Video"
+msgstr "Видео и Фотографии"
+
+#: .\questions_page\templates\questions_page\question_edit.html:5
+#: .\questions_page\templates\questions_page\question_edit.html:8
+msgid "Questions edit"
+msgstr "Редактировать вопрос"
 
 #: .\questions_page\templates\questions_page\questions_list.html:4
 #: .\questions_page\templates\questions_page\questions_main.html:4
@@ -1415,7 +1453,7 @@ msgstr "Вопросы главная страница"
 msgid "Ask question"
 msgstr "Задать вопрос"
 
-#: .\templates\base.html:19
+#: .\templates\base.html:20
 msgid "Home"
 msgstr "Домашняя"
 
