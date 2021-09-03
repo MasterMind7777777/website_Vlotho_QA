@@ -24,3 +24,9 @@ class Convert():
         value = value.lstrip('#')
         lv = len(value)
         return tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
+
+    def rgb_to_hex(rgb):
+        r = rgb[0]
+        g = rgb[1]
+        b = rgb[2]
+        return "#{:02x}{:02x}{:02x}".format(r,g,b)

@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from django.core.exceptions import ObjectDoesNotExist
 from .forms import ColourForm
 from .hexToCmy import Convert
+from .models import ColourCatalog
 from django.contrib.auth.decorators import login_required, user_passes_test
 from math import sqrt
 
@@ -71,10 +73,95 @@ def colour_mix_pigment_view(request):
             hex = form['colour'].value()
             vol = form['volume'].value()
             vol = int(vol)
+
             rgb = Convert.hex_to_rgb(hex)
+            available_colors_obj = ColourCatalog.objects.all().filter(hex__startswith="#")
+            available_colors = []
+
+            for colour in available_colors_obj:
+                available_colors.append(Convert.hex_to_rgb(colour.hex))
+            
+            clos_col = closest_color(rgb, available_colors)
+            clos_col_hex = Convert.rgb_to_hex(clos_col)
+            try:
+                color_obj = ColourCatalog.objects.get(hex=clos_col_hex)
+            except ObjectDoesNotExist:
+                clos_col_hex = clos_col_hex.upper()
+                color_obj = ColourCatalog.objects.get(hex=clos_col_hex)
+            
+
+            col1 = color_obj.colour1
+            col2 = color_obj.colour2
+            col3 = color_obj.colour3
+            col4 = color_obj.colour4
+
+            col1g = color_obj.colour1_grams/1000
+            col2g = color_obj.colour2_grams/1000
+            col3g = color_obj.colour3_grams/1000
+            col4g = color_obj.colour4_grams/1000
+
+            full_mass = col1g + col2g + col3g + col4g + vol
+            prosentageCol = vol / full_mass
+
+            col0g = 0
+            col1g = col1g * prosentageCol * vol
+            col2g = col2g * prosentageCol * vol
+            col3g = col3g * prosentageCol * vol
+            col4g = col4g * prosentageCol * vol
+
+            fin_mass = col1g + col2g + col3g + col4g
+            base_mass = vol - fin_mass
+
+            if col1 == 'K':
+                col0g = col1g
+                col1 = col2
+                col2 = col3
+                col3 = col4
+                col4 = '-'
+
+                col1g = col2g
+                col2g = col3g
+                col3g = col4g
+                col4g = 0
+            elif col2 == 'K':
+                col0g = col2g
+                col2 = col3
+                col3 = col4
+                col4 = '-'
+
+                col2g = col3g
+                col3g = col4g
+                col4g = 0
+            elif col3 == 'K':
+                col0g = col3g
+                col3 = col4
+                col4 = '-'
+
+                col4g = 0
+                col3g = col4g
+            elif col4 == 'K':
+                col0g = col4g
+                col4 = '-'
+                col4g = 0
 
 
-            return render(request, 'colourMix_page/colourMix_main.html', {'form': form})
 
+
+
+            if color_obj.base_type == 'WHITE BASE (20,0% TiO2)':
+                col5g = (base_mass / 100) * 20 + col0g
+                base_mass = base_mass - col5g
+            else:
+                col5g = 0
+                    
+
+            return render(request, 'colourMix_page/colourMix_pigment.html', 
+                {'form': form, 'base_mass': base_mass,
+                'col1': col1, 'col2': col2, 'col3': col3, 'col4': col4, 
+                'col1g': col1g, 'col2g': col2g, 'col3g': col3g, 'col4g': col4g, 'col5g': col5g})
+
+    else:
+        form = ColourForm()
+    return render(request, 'colourMix_page/colourMix_pigment.html', {'form': form})
 def fin_view(request):
     return render(request, 'colourMix_page/fin.html')

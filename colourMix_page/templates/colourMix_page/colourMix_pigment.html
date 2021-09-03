@@ -1,0 +1,71 @@
+{% extends 'colourMix_page/base_colourMix.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+
+{% block title %}{% translate 'Colour Mix with pigment' %}{% endblock %}
+
+{% block content %}
+    <script src="{% static 'js/jscolor.js' %}"></script>
+    <script>
+        // These options apply to all color pickers on the page
+        jscolor.presets.default = {
+            previewSize:100
+        };
+    </script>
+
+    <h1>{% translate 'Colour Mix with pigment' %}</h1>
+
+    <br>
+
+
+
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{form|crispy}}
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-success">{% trans 'Save'%}</button>
+
+        <br>
+        <br>
+        
+
+    </form>
+
+    <ul class="list-group">
+        <li class="list-group-item">
+          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+          {% translate 'colour 1' %} - {{col1}}: {{col1g}} {% translate 'grams' %}
+        </li>
+        <li class="list-group-item">
+          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+          {% translate 'colour 2' %} - {{col2}}: {{col2g}} {% translate 'grams' %}
+        </li>
+        <li class="list-group-item">
+          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+          {% translate 'colour 3' %} - {{col3}}: {{col3g}} {% translate 'grams' %}
+        </li>
+        <li class="list-group-item">
+          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+          {% translate 'colour 4' %} - {{col4}}: {{col4g}} {% translate 'grams' %}
+        </li>
+        <li class="list-group-item">
+          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+          {% translate 'colour 5' %} - {% translate 'K white' %}: {{col5g}} {% translate 'grams' %}
+        </li>
+        <li class="list-group-item">
+            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+            {% translate 'base' %}: {{base_mass}} {% translate 'grams' %}
+          </li>
+      </ul>
+
+      
+{% endblock %}
