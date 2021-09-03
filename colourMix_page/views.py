@@ -65,6 +65,8 @@ def closest_color(rgb, colours):
         color_diffs.append((color_diff, color))
     return min(color_diffs)[1]
 
+@login_required
+@user_passes_test(lambda u: u.groups.filter(name='Premium').count() > 0)
 def colour_mix_pigment_view(request):
 
     if request.method == "POST":
@@ -104,13 +106,13 @@ def colour_mix_pigment_view(request):
             prosentageCol = vol / full_mass
 
             col0g = 0
-            col1g = col1g * prosentageCol * vol
-            col2g = col2g * prosentageCol * vol
-            col3g = col3g * prosentageCol * vol
-            col4g = col4g * prosentageCol * vol
+            col1g = round((col1g * prosentageCol * vol),2)
+            col2g = round((col2g * prosentageCol * vol),2)
+            col3g = round((col3g * prosentageCol * vol),2)
+            col4g = round((col4g * prosentageCol * vol),2)
 
             fin_mass = col1g + col2g + col3g + col4g
-            base_mass = vol - fin_mass
+            base_mass = round((vol - fin_mass),2)
 
             if col1 == 'K':
                 col0g = col1g
@@ -150,7 +152,7 @@ def colour_mix_pigment_view(request):
 
             if color_obj.base_type == 'WHITE BASE (20,0% TiO2)':
                 col5g = (base_mass / 100) * 20 + col0g
-                base_mass = base_mass - col5g
+                base_mass = round((base_mass - col5g),2)
             else:
                 col5g = col0g
                     
@@ -163,5 +165,6 @@ def colour_mix_pigment_view(request):
     else:
         form = ColourForm()
     return render(request, 'colourMix_page/colourMix_pigment.html', {'form': form})
+
 def fin_view(request):
     return render(request, 'colourMix_page/fin.html')
