@@ -2,7 +2,6 @@ from django.shortcuts import render
 from .forms import ColourForm
 from .hexToCmy import Convert
 from django.contrib.auth.decorators import login_required, user_passes_test
-from .colour_mix import ColourMix
 
 #Create your views here.
 @login_required
@@ -11,7 +10,6 @@ def colourMixMain_view(request):
     if request.method == "POST":
         form = ColourForm(request.POST)
         if form.is_valid():
-            ColourMix.add_toDB()
             hex = form['colour'].value()
             vol = form['volume'].value()
             vol = int(vol)
