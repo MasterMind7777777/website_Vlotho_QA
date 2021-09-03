@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import ColourForm
 from .hexToCmy import Convert
 from django.contrib.auth.decorators import login_required, user_passes_test
+from math import sqrt
 
 #Create your views here.
 @login_required
@@ -52,6 +53,28 @@ def colourMixMain_view(request):
     else:
         form = ColourForm()
     return render(request, 'colourMix_page/colourMix_main.html', {'form': form})
+
+def closest_color(rgb, colours):
+    r, g, b = rgb
+    color_diffs = []
+    for color in colours:
+        cr, cg, cb = color
+        color_diff = sqrt(abs(r - cr)**2 + abs(g - cg)**2 + abs(b - cb)**2)
+        color_diffs.append((color_diff, color))
+    return min(color_diffs)[1]
+
+def colour_mix_pigment_view(request):
+
+    if request.method == "POST":
+        form = ColourForm(request.POST)
+        if form.is_valid():
+            hex = form['colour'].value()
+            vol = form['volume'].value()
+            vol = int(vol)
+            rgb = Convert.hex_to_rgb(hex)
+
+
+            return render(request, 'colourMix_page/colourMix_main.html', {'form': form})
 
 def fin_view(request):
     return render(request, 'colourMix_page/fin.html')

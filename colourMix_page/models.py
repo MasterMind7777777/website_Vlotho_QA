@@ -9,6 +9,7 @@ class ColourPic(models.Model):
 
 class ColourCatalog(models.Model):
     colour_id = CharField(max_length=15)
+    hex = CharField(max_length=7, null=True)
     base_type = CharField(max_length=24)
 
     colour1 = CharField(max_length=3)
