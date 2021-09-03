@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-03 20:51+0300\n"
+"POT-Creation-Date: 2021-09-03 23:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,7 +94,7 @@ msgid "Colour Mix"
 msgstr "Колеровка"
 
 #: .\colourMix_page\templates\colourMix_page\colourMix_main.html:31
-#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:33
+#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:35
 #: .\questions_page\templates\questions_page\postQ.html:21
 #: .\questions_page\templates\questions_page\question_answer.html:49
 #: .\questions_page\templates\questions_page\question_edit.html:14
@@ -126,21 +126,42 @@ msgstr "Вода"
 msgid "Colour Mix with pigment"
 msgstr "Колеровка c пигментами"
 
-#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:40
+#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:46
 msgid "colour 1"
 msgstr "Цвет 1"
 
-#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:44
+#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:46
+#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:50
+#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:54
+#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:58
+#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:62
+#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:66
+msgid "grams"
+msgstr "грамм"
+
+#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:50
 msgid "colour 2"
 msgstr "Цвет 2"
 
-#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:48
+#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:54
 msgid "colour 3"
 msgstr "Цвет 3"
 
-#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:56
+#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:58
+msgid "colour 4"
+msgstr "Цвет 4"
+
+#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:62
 msgid "colour 5"
 msgstr "Цвет 5"
+
+#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:62
+msgid "K white"
+msgstr "K Белый"
+
+#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:66
+msgid "base"
+msgstr "База"
 
 #: .\home_page\templates\home_page\base_home.html:7
 #: .\profile_page\templates\profile_page\base_profile.html:5

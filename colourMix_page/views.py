@@ -152,7 +152,7 @@ def colour_mix_pigment_view(request):
                 col5g = (base_mass / 100) * 20 + col0g
                 base_mass = base_mass - col5g
             else:
-                col5g = 0
+                col5g = col0g
                     
 
             return render(request, 'colourMix_page/colourMix_pigment.html', 
