@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import ColourForm
 from .hexToCmy import Convert
 from django.contrib.auth.decorators import login_required, user_passes_test
+from .colour_mix import ColourMix
 
 #Create your views here.
 @login_required
@@ -10,11 +11,13 @@ def colourMixMain_view(request):
     if request.method == "POST":
         form = ColourForm(request.POST)
         if form.is_valid():
+            ColourMix.add_toDB()
             hex = form['colour'].value()
             vol = form['volume'].value()
             vol = int(vol)
             cmy = Convert.rgb_to_cmy(Convert.hex_to_rgb(hex)) 
             print(cmy)
+            
             c = cmy[0]
             m = cmy[1]
             y = cmy[2]
