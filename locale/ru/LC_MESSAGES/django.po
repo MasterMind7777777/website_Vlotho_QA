@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-03 23:50+0300\n"
+"POT-Creation-Date: 2021-09-04 15:11+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -163,6 +163,10 @@ msgstr "K Белый"
 msgid "base"
 msgstr "База"
 
+#: .\colourMix_page\views.py:53
+msgid "White colour does not exsist"
+msgstr "Белого цвета не бывает"
+
 #: .\home_page\templates\home_page\base_home.html:7
 #: .\profile_page\templates\profile_page\base_profile.html:5
 msgid "Profile"
@@ -181,11 +185,11 @@ msgstr "Vlotho Домашняя"
 msgid "Home Page"
 msgstr "Домашняя страница"
 
-#: .\mysite\settings.py:126
+#: .\mysite\settings.py:127
 msgid "English"
 msgstr "Англиский"
 
-#: .\mysite\settings.py:127
+#: .\mysite\settings.py:128
 msgid "Russian"
 msgstr "Русский"
 
@@ -769,6 +773,10 @@ msgid "Order"
 msgstr ""
 
 #: .\myvenv\Lib\site-packages\django\forms\formsets.py:417
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list.html:92
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list_list.html:57
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:94
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\tag_list.html:43
 msgid "Delete"
 msgstr ""
 
@@ -1399,6 +1407,309 @@ msgstr ""
 #: .\myvenv\Lib\site-packages\django\views\templates\default_urlconf.html:249
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:37
+msgid "the tag name"
+msgstr "Название тэга"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:58
+msgid "the name of the subscription plan"
+msgstr "Название вида подписки"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:63
+msgid "slug to reference the subscription plan"
+msgstr ""
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:70
+msgid "a description of the subscription plan"
+msgstr "Описание вида подписки"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:77
+msgid "the Django auth group for this plan"
+msgstr "Группа подписки"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:85
+msgid "any tags associated with this plan"
+msgstr "тэги относящиеся к этому виду подписки "
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:91
+msgid ""
+"how many days after the subscription ends before the subscription expires"
+msgstr "Сколько дней будет длится подписка после окончания оплаченого периода"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:125
+msgid "the subscription plan for these cost details"
+msgstr ""
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:131
+msgid "slug to reference these cost details"
+msgstr ""
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:138
+msgid "how often the plan is billed (per recurrence unit)"
+msgstr "Раз в сколько условных отрезков производится оплата"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:149
+msgid "the cost per recurrence of the plan"
+msgstr "Стоимость за условный срок"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:248
+msgid "the user this subscription applies to"
+msgstr "Пользователь для которого производится подписка"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:255
+msgid "the plan costs and billing frequency for this user"
+msgstr "Вид и перодичнось оплаты для этого Пользователя"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:262
+msgid "the date to start billing this subscription"
+msgstr "Дата начала оплаты подписки"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:268
+msgid "the date to finish billing this subscription"
+msgstr "Дата окончания оплаты подписки"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:274
+msgid "the last date this plan was billed"
+msgstr "Последняя дата когда была оплата"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:280
+msgid "the next date billing is due"
+msgstr "Дата следующей оплаты"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:286
+msgid "whether this subscription is active or not"
+msgstr "Активна?"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:290
+msgid "whether this subscription is cancelled or not"
+msgstr "Отменена?"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:307
+msgid "the user that this subscription was billed for"
+msgstr "Пользователь для которого прошла оплата"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:314
+msgid "the plan costs that were billed"
+msgstr "Вид оплаты который был оплачен"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:320
+msgid "the datetime the transaction was billed"
+msgstr "дата и время оплаты транзакции"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:326
+msgid "how much was billed for the user"
+msgstr "Сколько было оплачено этим пользователем"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:339
+msgid "title to display on the subscription plan list page"
+msgstr "Название для отображения на экране выбора подписок"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:344
+msgid "slug to reference the subscription plan list"
+msgstr ""
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:351
+msgid "subtitle to display on the subscription plan list page"
+msgstr "Подзаголовок для отображения на экране выбора подписок"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:356
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:361
+msgid "header text to display on the subscription plan list page"
+msgstr "Текст верхнего колонтитула для отображения на экране выбора подписок"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:366
+msgid "whether this plan list is active or not."
+msgstr "Активна?"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:387
+msgid "HTML content to display for plan"
+msgstr "HTML контент для отображения на экране выбора подписок"
+
+#: .\myvenv\Lib\site-packages\subscriptions\models.py:398
+msgid "Order to display plan in (lower numbers displayed first)"
+msgstr "Приоритет для отображения на экране выбора подписок (1 самый большой)"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list.html:55
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list.html:64
+msgid "Plan name"
+msgstr "Название подписки"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list.html:56
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list.html:68
+msgid "Description"
+msgstr "Описание"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list.html:57
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list.html:72
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\snippets\menu.html:11
+msgid "Tags"
+msgstr "Тэги"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list.html:58
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list.html:80
+msgid "Costs"
+msgstr "Цены"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list.html:91
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list_detail_list.html:54
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list_list.html:56
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:93
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\tag_list.html:42
+msgid "Edit"
+msgstr "Редактировать"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list.html:100
+msgid "No subscription plans have been added yet."
+msgstr "Нет доступных подписок"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list_detail_list.html:43
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list_detail_list.html:49
+msgid "Subscription plan"
+msgstr "Подписка"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list_detail_list.html:57
+msgid "Remove"
+msgstr "Удалить"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list_detail_list.html:68
+msgid "No plans have been added to this list yet."
+msgstr "Не было добавлено ни одной подписоки в набор подписок"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list_list.html:40
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list_list.html:47
+msgid "Plan list title"
+msgstr "Название набора подписок"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list_list.html:41
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list_list.html:51
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:51
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:85
+msgid "Active?"
+msgstr "Активна?"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list_list.html:55
+msgid "Manage plans"
+msgstr "Управлять подписками"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\plan_list_list.html:66
+msgid "No plan lists have been added yet."
+msgstr "Нет доступных наборов подписок"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\snippets\menu.html:6
+msgid "Subscription plans"
+msgstr "Виды Подписки"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\snippets\menu.html:16
+msgid "Plan lists"
+msgstr "Наборы подписок"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\snippets\menu.html:21
+msgid "User subscriptions"
+msgstr "Подписки пользователей"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\snippets\menu.html:26
+msgid "Payment transactions"
+msgstr "Транзакции"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_cancel.html:34
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_cancel.html:42
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_user_list.html:34
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_user_list.html:44
+msgid "Subscription"
+msgstr "Подписка"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_cancel.html:35
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_cancel.html:46
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_user_list.html:35
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_user_list.html:48
+msgid "Payment details"
+msgstr "Данные для оплаты"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_cancel.html:36
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_cancel.html:51
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:49
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:77
+msgid "Last billing date"
+msgstr "Последняя дата оплаты"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_cancel.html:37
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_cancel.html:59
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_user_list.html:36
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_user_list.html:53
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:50
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:81
+msgid "Next billing date"
+msgstr "Следующая дата оплаты"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_user_list.html:37
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscribe_user_list.html:61
+msgid "Subscription ends"
+msgstr "Подписка заканчивается"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:45
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:59
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\transaction_detail.html:18
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\transaction_list.html:43
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\transaction_list.html:52
+msgid "User"
+msgstr "Пользователь"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:46
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:63
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\transaction_detail.html:23
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\transaction_list.html:44
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\transaction_list.html:56
+msgid "Plan"
+msgstr "Подписка"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:47
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:69
+msgid "Billing start date"
+msgstr "Дата начала оплаты подписки"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:48
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:73
+msgid "Billing end date"
+msgstr "Дата окончания оплаты подписки"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:52
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:89
+msgid "Cancelled?"
+msgstr "Отменена?"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\subscription_list.html:103
+msgid "No user subscriptions have been added yet."
+msgstr "Не было добавлено ни одной подписки пользователей"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\tag_list.html:32
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\tag_list.html:38
+msgid "Tag name"
+msgstr "Название тэга"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\tag_list.html:51
+msgid "No tags have been added yet."
+msgstr "Не было добавлено ни одного тэга"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\transaction_detail.html:28
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\transaction_list.html:45
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\transaction_list.html:60
+msgid "Transaction date"
+msgstr "Дата транзакции"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\transaction_detail.html:33
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\transaction_list.html:46
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\transaction_list.html:64
+msgid "Amount"
+msgstr "Сумма"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\transaction_list.html:68
+msgid "View"
+msgstr "Вид"
+
+#: .\myvenv\Lib\site-packages\subscriptions\templates\subscriptions\transaction_list.html:74
+msgid "No subscription payment transactions have occurred have been added yet."
+msgstr "Не было произведено ни одной тразнакции пока что"
 
 #: .\profile_page\templates\profile_page\password_change.html:6
 #: .\profile_page\templates\profile_page\password_change.html:9

@@ -5,6 +5,7 @@ from .hexToCmy import Convert
 from .models import ColourCatalog
 from django.contrib.auth.decorators import login_required, user_passes_test
 from math import sqrt
+from django.utils.translation import gettext as _
 
 #Create your views here.
 @login_required
@@ -26,26 +27,30 @@ def colourMixMain_view(request):
             cmy_arr = [c,m,y]
             matches = [x for x in cmy_arr if x != 0]
             water = len(matches)*100 - sum(cmy_arr)
-            coef = (vol / (len(matches)*100))    
-            c = c * coef
-            m = m * coef
-            y = y * coef
-            water = water * coef
-            min_cmyk = min(c,m,y)
-            if c == min_cmyk:
-                k = c
-                c = 0
-            if m == min_cmyk:
-                k = m
-                m = 0
-            if y == min_cmyk:
-                k = y
-                y = 0
-            c = round(c, 2)
-            m = round(m, 2)
-            y = round(y, 2)
-            k = round(k, 2)
-            water = round(water, 2)
+            
+            try:
+                coef = (vol / (len(matches)*100))   
+                c = c * coef
+                m = m * coef
+                y = y * coef
+                water = water * coef
+                min_cmyk = min(c,m,y)
+                if c == min_cmyk:
+                    k = c
+                    c = 0
+                if m == min_cmyk:
+                    k = m
+                    m = 0
+                if y == min_cmyk:
+                    k = y
+                    y = 0
+                c = round(c, 2)
+                m = round(m, 2)
+                y = round(y, 2)
+                k = round(k, 2)
+                water = round(water, 2)
+            except ZeroDivisionError:
+                c = m = y = k = water = _('White colour does not exsist')
 
 
             return render(request, 'colourMix_page/colourMix_main.html', {'form': form, 'c': c, 'm':m, 'y': y, 'k': k, 'water': water})
@@ -151,10 +156,10 @@ def colour_mix_pigment_view(request):
 
 
             if color_obj.base_type == 'WHITE BASE (20,0% TiO2)':
-                col5g = (base_mass / 100) * 20 + col0g
+                col5g = round(((base_mass / 100) * 20 + col0g), 2)
                 base_mass = round((base_mass - col5g),2)
             else:
-                col5g = col0g
+                col5g = round(col0g, 2)
                     
 
             return render(request, 'colourMix_page/colourMix_pigment.html', 
