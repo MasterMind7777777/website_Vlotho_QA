@@ -96,11 +96,52 @@ def colour_mix_pigment_view(request):
                 clos_col_hex = clos_col_hex.upper()
                 color_obj = ColourCatalog.objects.get(hex=clos_col_hex)
             
+            col_dict = {
+                'X': _('Lemon'),
+                'XS': _('Lemon light resistant'),
+                'AN': _('yellow nonorganic'),
+                'ASG': _('light-yellow light resistant'),
+                'AS': _('yellow light resistant'),
+                'A': _('yellow'),
+                'TG': _('light orange'),
+                'C': _('Ochre'),
+                'OSR': _('orange light resistant R'),
+                'OR': _('orange R'),
+                'O': _('orange'),
+                'Q': _('red'),
+                'QS': _('red light resistant'),
+                'F': _('red oxide'),
+                'R': _('pomegranate'),
+                'RS': _('pomegranate light resistant'),
+                'PM': _('magenta'),
+                'V': _('brown'),
+                'L': _('swampy'),
+                'D': _('dark green'),
+                'GO': _('green'),
+                'U': _('ultramarin'),
+                'ER': _('blue R'),
+                'E': _('blue'),
+                'N': _('purple'),
+                'K': _('white'),
+                'BL': _('black oxide'),
+                'B': _('black'),
+            }
 
-            col1 = color_obj.colour1
-            col2 = color_obj.colour2
-            col3 = color_obj.colour3
-            col4 = color_obj.colour4
+
+            col1 = col_dict[color_obj.colour1]
+            try:
+                col2 = col_dict[color_obj.colour2]
+            except KeyError:
+                col2 = _('Not needed')
+            try:
+                col3 = col_dict[color_obj.colour3]
+            except KeyError:
+                col3 = _('Not needed')
+            try:
+                col4 = col_dict[color_obj.colour4]
+            except KeyError:
+                col4 = _('Not needed')
+
 
             col1g = color_obj.colour1_grams/1000
             col2g = color_obj.colour2_grams/1000

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-04 15:11+0300\n"
+"POT-Creation-Date: 2021-09-05 00:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -166,6 +166,123 @@ msgstr "База"
 #: .\colourMix_page\views.py:53
 msgid "White colour does not exsist"
 msgstr "Белого цвета не бывает"
+
+#: .\colourMix_page\views.py:100
+msgid "Lemon"
+msgstr "Лимонный"
+
+#: .\colourMix_page\views.py:101
+msgid "Lemon light resistant"
+msgstr "Лимонный светостойкий"
+
+#: .\colourMix_page\views.py:102
+msgid "yellow nonorganic"
+msgstr "Желтый неорганический"
+
+#: .\colourMix_page\views.py:103
+msgid "light-yellow light resistant"
+msgstr "Светло-желтый светостойкий"
+
+#: .\colourMix_page\views.py:104
+msgid "yellow light resistant"
+msgstr "Желтый светостойкий"
+
+#: .\colourMix_page\views.py:105
+msgid "yellow"
+msgstr "Жёлтый"
+
+#: .\colourMix_page\views.py:106
+msgid "light orange"
+msgstr "Золотистый G"
+
+#: .\colourMix_page\views.py:107
+msgid "Ochre"
+msgstr "Охра"
+
+#: .\colourMix_page\views.py:108
+msgid "orange light resistant R"
+msgstr "Оранжевый светостойкий R"
+
+#: .\colourMix_page\views.py:109
+msgid "orange R"
+msgstr "Оранжевый R"
+
+#: .\colourMix_page\views.py:110
+msgid "orange"
+msgstr "Оранжевый"
+
+#: .\colourMix_page\views.py:111
+msgid "red"
+msgstr "Красный"
+
+#: .\colourMix_page\views.py:112
+msgid "red light resistant"
+msgstr "Красный светостойкий"
+
+#: .\colourMix_page\views.py:113
+msgid "red oxide"
+msgstr "Красный оксидный"
+
+#: .\colourMix_page\views.py:114
+msgid "pomegranate"
+msgstr "Гранатовый"
+
+#: .\colourMix_page\views.py:115
+msgid "pomegranate light resistant"
+msgstr "Гранатовый светостойкий"
+
+#: .\colourMix_page\views.py:116
+msgid "magenta"
+msgstr "Маджента"
+
+#: .\colourMix_page\views.py:117
+msgid "brown"
+msgstr "Коричневый"
+
+#: .\colourMix_page\views.py:118
+msgid "swampy"
+msgstr "Болотный"
+
+#: .\colourMix_page\views.py:119
+msgid "dark green"
+msgstr "Темно зелёный"
+
+#: .\colourMix_page\views.py:120
+msgid "green"
+msgstr "Зелёный"
+
+#: .\colourMix_page\views.py:121
+msgid "ultramarin"
+msgstr "Ультрамарин"
+
+#: .\colourMix_page\views.py:122
+msgid "blue R"
+msgstr "Синий R"
+
+#: .\colourMix_page\views.py:123
+msgid "blue"
+msgstr "Синий"
+
+#: .\colourMix_page\views.py:124
+msgid "purple"
+msgstr "Фиолетовый"
+
+#: .\colourMix_page\views.py:125
+msgid "white"
+msgstr "Белый"
+
+#: .\colourMix_page\views.py:126
+msgid "black oxide"
+msgstr "Черный оксидный"
+
+#: .\colourMix_page\views.py:127
+msgid "black"
+msgstr "Чёрный"
+
+#: .\colourMix_page\views.py:135 .\colourMix_page\views.py:139
+#: .\colourMix_page\views.py:143
+msgid "Not needed"
+msgstr "Не требуется"
 
 #: .\home_page\templates\home_page\base_home.html:7
 #: .\profile_page\templates\profile_page\base_profile.html:5
@@ -1826,6 +1943,3 @@ msgstr "Домашняя"
 
 #~ msgid "Cyan"
 #~ msgstr "Синий"
-
-#~ msgid "Magenta"
-#~ msgstr "Малиновый"
