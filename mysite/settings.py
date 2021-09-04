@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # third party apps
     'crispy_forms',
     'colorfield',
+    'subscriptions',
 
 
     # myApps
@@ -140,7 +141,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+#STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, "static")
 ]
@@ -159,5 +160,11 @@ LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/authentication/login/'
 
 CRISPY_TEMPLATE_PACK="bootstrap4"
+
+# Set your currency type
+DFS_CURRENCY_LOCALE = 'ru_ru'
+
+# Specify your base template file
+DFS_BASE_TEMPLATE = 'base.html'
 
 LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)

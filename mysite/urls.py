@@ -18,11 +18,13 @@ from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 from django.conf.urls.static import static
+import subscriptions
 
 urlpatterns = [
     path('', include('home_page.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
+    path('subscriptions/', include('subscriptions.urls')),
     path('blog/', include('blog.urls')),
     path('authentication/', include('auth_page.urls')),
     path('profile/', include('profile_page.urls')),
