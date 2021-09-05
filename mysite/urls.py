@@ -22,9 +22,11 @@ import subscriptions
 
 urlpatterns = [
     path('', include('home_page.urls')),
+    path('robokassa/', include('robokassa.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
     path('subscriptions/', include('subscriptions.urls')),
+    path('subscription/', include('subscription_page.urls')),
     path('blog/', include('blog.urls')),
     path('authentication/', include('auth_page.urls')),
     path('profile/', include('profile_page.urls')),

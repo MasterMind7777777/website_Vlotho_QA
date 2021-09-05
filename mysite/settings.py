@@ -10,9 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+
 from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'colorfield',
     'subscriptions',
+    'robokassa',
 
 
     # myApps
@@ -54,7 +57,9 @@ INSTALLED_APPS = [
     'profile_page',
     'colourMix_page',
     'questions_page',
+    'subscription_page',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -168,3 +173,11 @@ DFS_CURRENCY_LOCALE = 'ru_ru'
 DFS_BASE_TEMPLATE = 'base.html'
 
 LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
+
+# robokassa
+ROBOKASSA_LOGIN = 'VlothoQA'  
+ROBOKASSA_PASSWORD1 = 'qmK75I7dx6U1NFiTUSkp'
+ROBOKASSA_PASSWORD2 = 'V2JhG2u8xOYrgY4i8QmV'
+
+# subsciptions
+#DFS_SUBSCRIBE_VIEW = 'subscription_page.views.CustomSubscribeView'
