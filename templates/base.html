@@ -47,13 +47,13 @@
                             <li><a class="dropdown-item" href="{% url 'logout'%}">{% translate 'Log out' %}</a></li>
                         </ul>
                     </div>
-                </div>
-
-                <div class="col">
-                    <h1 >Vlotho</h1>
-                    <hr class="mt-0 mb-4">
-                    {% block content %}
-                    {% endblock %}
+                
+                    <div class="col">
+                        <h1 >Vlotho</h1>
+                        <hr class="mt-0 mb-4">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
                 </div>
             </div>
             
