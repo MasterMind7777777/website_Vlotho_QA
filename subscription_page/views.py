@@ -6,7 +6,7 @@ from subscriptions import views, forms
 from .forms import CustomPaymentForm
 from robokassa.forms import RobokassaForm
 
-
+# Override template of SubscribeView
 
 @login_required
 def pay_with_robokassa(request):

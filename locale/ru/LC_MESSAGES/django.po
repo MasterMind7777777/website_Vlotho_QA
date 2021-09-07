@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-05 00:23+0300\n"
+"POT-Creation-Date: 2021-09-07 20:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,28 +20,13 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\auth_page\templates\auth_page\auth_main.html:4
-#: .\auth_page\templates\auth_page\base_auth.html:5
-#: .\home_page\templates\home_page\base_home.html:5
+#: .\auth_page\templates\auth_page\auth_main.html:4 .\templates\base.html:38
 msgid "Authentication"
 msgstr "Регистрация/Вход"
 
 #: .\auth_page\templates\auth_page\auth_main.html:7
 msgid "Please regester or sign up"
 msgstr "Зарегестрируйтесь или войдите"
-
-#: .\auth_page\templates\auth_page\auth_main.html:8
-msgid "Log out"
-msgstr "Выйти из аккаунта"
-
-#: .\auth_page\templates\auth_page\base_auth.html:6
-msgid "Sign up"
-msgstr "Зарегестрироватся"
-
-#: .\auth_page\templates\auth_page\base_auth.html:7
-#: .\auth_page\templates\registration\login.html:4
-msgid "Log in"
-msgstr "Войти"
 
 #: .\auth_page\templates\auth_page\registration.html:4
 msgid "Create an Account"
@@ -50,6 +35,10 @@ msgstr "Создать аккаунт"
 #: .\auth_page\templates\auth_page\registration.html:12
 msgid "Register"
 msgstr "Зарегистрироватся"
+
+#: .\auth_page\templates\registration\login.html:4 .\templates\base.html:44
+msgid "Log in"
+msgstr "Войти"
 
 #: .\auth_page\templates\registration\login.html:11
 msgid "Your username and password didn't match. Please try again."
@@ -79,19 +68,21 @@ msgstr "Объём в милилитрах"
 msgid "colour"
 msgstr "Цвет"
 
-#: .\colourMix_page\templates\colourMix_page\base_colourMix.html:6
-#: .\home_page\templates\home_page\base_home.html:6
-msgid "Mix colours"
-msgstr "Колеровка"
+#: .\colourMix_page\templates\colourMix_page\base_colourMix.html:9
+msgid "Eco tinte"
+msgstr ""
 
-#: .\colourMix_page\templates\colourMix_page\base_colourMix.html:7
-msgid "Mix colours pigment"
-msgstr "Колеровка с пигментами"
+#: .\colourMix_page\templates\colourMix_page\base_colourMix.html:15
+msgid "Pigment"
+msgstr "Пигменты"
 
 #: .\colourMix_page\templates\colourMix_page\colourMix_main.html:7
-#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:18
 msgid "Colour Mix"
 msgstr "Колеровка"
+
+#: .\colourMix_page\templates\colourMix_page\colourMix_main.html:18
+msgid "Eco tinte paint"
+msgstr "Краска Eco tinte"
 
 #: .\colourMix_page\templates\colourMix_page\colourMix_main.html:31
 #: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:35
@@ -122,9 +113,12 @@ msgid "Water"
 msgstr "Вода"
 
 #: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:7
-#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:18
 msgid "Colour Mix with pigment"
 msgstr "Колеровка c пигментами"
+
+#: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:18
+msgid "Pigment based paint"
+msgstr "Краска на основе пигментов"
 
 #: .\colourMix_page\templates\colourMix_page\colourMix_pigment.html:46
 msgid "colour 1"
@@ -284,13 +278,11 @@ msgstr "Чёрный"
 msgid "Not needed"
 msgstr "Не требуется"
 
-#: .\home_page\templates\home_page\base_home.html:7
-#: .\profile_page\templates\profile_page\base_profile.html:5
-msgid "Profile"
-msgstr "Профиль"
-
 #: .\home_page\templates\home_page\base_home.html:8
-#: .\questions_page\templates\questions_page\base_questions.html:5
+msgid "Mix colours"
+msgstr "Колеровка"
+
+#: .\home_page\templates\home_page\base_home.html:14
 msgid "Questions"
 msgstr "Вопросы"
 
@@ -302,11 +294,11 @@ msgstr "Vlotho Домашняя"
 msgid "Home Page"
 msgstr "Домашняя страница"
 
-#: .\mysite\settings.py:127
+#: .\mysite\settings.py:132
 msgid "English"
 msgstr "Англиский"
 
-#: .\mysite\settings.py:128
+#: .\mysite\settings.py:133
 msgid "Russian"
 msgstr "Русский"
 
@@ -1873,11 +1865,15 @@ msgstr "Фотографии"
 msgid "video, photo"
 msgstr "Видео и Фотографии"
 
-#: .\questions_page\templates\questions_page\base_questions.html:6
+#: .\questions_page\templates\questions_page\base_questions.html:8
+msgid "My questions"
+msgstr "Мои вопросы"
+
+#: .\questions_page\templates\questions_page\base_questions.html:14
 msgid "All questions"
 msgstr "Все вопросы"
 
-#: .\questions_page\templates\questions_page\base_questions.html:7
+#: .\questions_page\templates\questions_page\base_questions.html:20
 #: .\questions_page\templates\questions_page\questions_answer.html:4
 #: .\questions_page\templates\questions_page\questions_answer.html:7
 msgid "Answer questions"
@@ -1934,9 +1930,24 @@ msgstr "Вопросы главная страница"
 msgid "Ask question"
 msgstr "Задать вопрос"
 
-#: .\templates\base.html:20
+#: .\templates\base.html:23
 msgid "Home"
 msgstr "Домашняя"
+
+#: .\templates\base.html:43
+msgid "Sign up"
+msgstr "Зарегестрироватся"
+
+#: .\templates\base.html:45
+msgid "Profile"
+msgstr "Профиль"
+
+#: .\templates\base.html:47
+msgid "Log out"
+msgstr "Выйти из аккаунта"
+
+#~ msgid "Mix colours pigment"
+#~ msgstr "Колеровка с пигментами"
 
 #~ msgid "volume"
 #~ msgstr "Объём"

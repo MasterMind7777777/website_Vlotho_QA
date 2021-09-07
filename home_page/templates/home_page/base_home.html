@@ -2,8 +2,16 @@
 {% load i18n %}
 
 {% block sideBar %}
-    <a href="{% url 'auth_view'%}">{% translate 'Authentication' %}</a>
-    <a href="{% url 'colourMixMain_view'%}">{% translate 'Mix colours' %}</a>
-    <a href="{% url 'profile_view'%}">{% translate 'Profile' %}</a>
-    <a href="{% url 'questionMain_view'%}">{% translate 'Questions' %}</a>
+    <li>
+        <a href="{% url 'colourMixMain_view'%}" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><i class="bi bi-palette"></i></svg>
+        {% translate 'Mix colours' %}
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'questionMain_view'%}" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><i class="bi bi-question-circle"></i></svg>
+        {% translate 'Questions' %}
+        </a>
+    </li>
 {% endblock %}

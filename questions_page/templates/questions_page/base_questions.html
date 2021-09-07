@@ -2,7 +2,22 @@
 {% load i18n %}
 
 {% block sideBar %}
-    <a href="{% url 'questionMain_view'%}">{% translate 'Questions' %}</a>
-    <a href="{% url 'displayQ_view'%}">{% translate 'All questions' %}</a>
-    <a href="{% url 'questions_answers_view'%}">{% translate 'Answer questions' %}</a>
+    <li>
+        <a href="{% url 'questionMain_view'%}" class="nav-link text-white" aria-current="page">
+        <svg class="bi me-2" width="16" height="16"><i class="bi bi-person-lines-fill"></i></svg>
+        {% translate 'My questions' %}
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'displayQ_view'%}" class="nav-link text-white" aria-current="page">
+        <svg class="bi me-2" width="16" height="16"><i class="bi bi-question-circle"></i></svg>
+        {% translate 'All questions' %}
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'questions_answers_view'%}" class="nav-link text-white" aria-current="page">
+        <svg class="bi me-2" width="16" height="16"><i class="bi bi-card-checklist"></i></svg>
+        {% translate 'Answer questions' %}
+        </a>
+    </li>
 {% endblock %}
