@@ -21,13 +21,7 @@
                     <a href="{% url 'mainHome_view'%}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <svg class="bi me-1" width="40" height="32"><img src="https://vlotho.ru/favicon.ico" alt="" width="32" height="32" class="me-2"></svg>
                     <span class="fs-4">{% translate 'Home' %}</span>
-                    </a>
-                    <hr>
-                    <ul class="nav nav-pills flex-column mb-auto">
-                    {% block sideBar %}
-                    {% endblock %}
-                    </ul>
-                    <hr>
+
                     <div class="dropdown">
                         <a href="{% url 'auth_view'%}" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                             <svg class="bi me-1" width="40" height="32"><i class="bi me-2 bi-person-circle"></i></svg>
@@ -47,13 +41,21 @@
                             <li><a class="dropdown-item" href="{% url 'logout'%}">{% translate 'Log out' %}</a></li>
                         </ul>
                     </div>
+
+                    </a>
+                    <hr>
+                    <ul class="nav nav-pills flex-column mb-auto">
+                    {% block sideBar %}
+                    {% endblock %}
+                    </ul>
+                    <hr>
                 </div>
                 
-                <div class="col p-5">
-                        <h1 >Vlotho</h1>
-                        <hr class="mt-0 mb-4">
-                        {% block content %}
-                        {% endblock %}
+                <div class="col-10 p-5">
+                    <h1 >Vlotho</h1>
+                    <hr class="mt-0 mb-4">
+                    {% block content %}
+                    {% endblock %}
                 </div>
             </div>
             

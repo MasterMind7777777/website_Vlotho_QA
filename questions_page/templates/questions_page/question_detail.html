@@ -27,7 +27,7 @@
         {% if images != None %}
             <h2>{% translate 'Pictures' %}</h2>
             {% for image in images %}
-                <img src="{{ image.image.url }}">
+                <img src="{{ image.image.url }}" class="img-fluid">
             {% endfor%}
         {% endif %}
     </div>
@@ -51,7 +51,7 @@
                     {% if media_files != None %}
                         <h3>{% translate 'Photo, Video' %}</h3>
                         {% for media_file in media_files %}
-                            <img src="{{ media_file.media_file.url }}">
+                            <img src="{{ media_file.media_file.url }}" class="img-fluid">
                         {% endfor%}
                     {% endif %}
                 </div>

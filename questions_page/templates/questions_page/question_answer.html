@@ -27,7 +27,7 @@
         {% if images != None %}
             <h2>{% translate 'Pictures' %}</h2>
             {% for image in images %}
-                <img src="{{ image.image.url }}">
+                <img src="{{ image.image.url }}" class="img-fluid">
             {% endfor%}
         {% endif %}
     </div>
